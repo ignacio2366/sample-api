@@ -7,12 +7,14 @@
     "main": "./src/index.ts",
     "build": "tsc --build",
     "start": "tsc --build && node ./dist/src/index.js",
-    "start:dev": "nodemon --exec ts-node ./src/index.ts"
+    "start:dev": "nodemon --exec ts-node ./src/index.ts",
+    "swagger": "node .swagger-generate.ts && nodemon --exec ts-node ./src/index.ts"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
     "nodemon": "^3.1.10",
+    "swagger-autogen": "^2.23.7",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.4",
     "typescript": "^5.9.2"
@@ -20,6 +22,8 @@
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "swagger-ui": "^5.27.1",
+    "swagger-ui-express": "^5.0.1"
   }
 }

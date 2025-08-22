@@ -106,7 +106,8 @@
     },
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*",
+    "swagger-generate.ts"
   ],
   "exclude": [
     "./node_modules"
