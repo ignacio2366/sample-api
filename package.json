@@ -8,7 +8,7 @@
     "build": "tsc --build",
     "start": "tsc --build && node ./dist/src/index.js",
     "start:dev": "nodemon --exec ts-node ./src/index.ts",
-    "swagger": "node .swagger-generate.ts && nodemon --exec ts-node ./src/index.ts"
+    "swagger": "node .swagger-generate.ts"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
@@ -22,7 +22,9 @@
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "mongodb": "^6.18.0",
     "swagger-ui": "^5.27.1",
     "swagger-ui-express": "^5.0.1"
   }

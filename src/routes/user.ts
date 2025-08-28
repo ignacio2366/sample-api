@@ -9,6 +9,7 @@ import {
 } from "./../controllers/userController";
 
 const userRouter = Router();
+
 // api/user/
 userRouter.get("/getuser", getUser);
 userRouter.get("/:userId/getUser", getUser);

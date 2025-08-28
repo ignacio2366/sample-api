@@ -1,5 +1,8 @@
 import express from "express";
 import userRouter from "./routes/user";
+import connectDB from "./configs/mongo";
+import dotenv from "dotenv";
+
 const app = express();
 const bodyParser = require("body-parser");
 const PORT = 3000;
@@ -7,6 +10,8 @@ const PORT = 3000;
 const cors = require("cors");
 const swaggerui = require("swagger-ui-express");
 const swaggerDocumentation = require("./../swagger-output.json");
+
+dotenv.config();
 
 app.use(
   cors({
@@ -21,6 +26,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//DB Mongo
+connectDB();
 // API
 app.use("/api-docs", swaggerui.serve, swaggerui.setup(swaggerDocumentation));
 
