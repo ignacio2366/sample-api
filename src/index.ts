@@ -38,6 +38,10 @@ app.get("/", (req, res) => {
   res.send("Sample API is running!");
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  // This runs ONLY locally (when VERCEL is undefined)
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+}
