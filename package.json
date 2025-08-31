@@ -6,9 +6,9 @@
   "scripts": {
     "main": "./src/index.ts",
     "build": "tsc --build",
-    "start": "tsc --build && node ./dist/src/index.js",
+    "start": "node ./dist/index.js",
     "start:dev": "nodemon --exec ts-node ./src/index.ts",
-    "swagger": "node .swagger-generate.ts"
+    "swagger": "node ./src/swagger-generate.ts"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",

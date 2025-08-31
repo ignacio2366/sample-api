@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/swagger-generate.ts","./src/api/index.ts","./src/configs/mongo.ts","./src/controllers/index.ts","./src/controllers/usercontroller.ts","./src/models/payload.model.ts","./src/routes/user.ts"],"version":"5.9.2"}

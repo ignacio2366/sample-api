@@ -1,6 +1,5 @@
 import express from "express";
-import userRouter from "./routes/user";
-import connectDB from "./configs/mongo";
+import userRouter from "./../routes/user";
 import dotenv from "dotenv";
 
 const app = express();
@@ -8,8 +7,8 @@ const bodyParser = require("body-parser");
 const PORT = 3000;
 
 const cors = require("cors");
-//const swaggerui = require("swagger-ui-express");
-//const swaggerDocumentation = require("./../swagger-output.json");
+const swaggerui = require("swagger-ui-express");
+const swaggerDocumentation = require("./../swagger-output.json");
 
 dotenv.config();
 
@@ -17,12 +16,7 @@ app.use(
   cors({
     origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-      "X-Requested-With",
-      "accesskey",
-    ],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
   })
 );
 
@@ -35,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 // connectDB();
 
 // API
-// app.use("/api-docs", swaggerui.serve, swaggerui.setup(swaggerDocumentation));
+app.use("/api-docs", swaggerui.serve, swaggerui.setup(swaggerDocumentation));
 
 //Routes
 app.use("/api/user", userRouter);
@@ -51,4 +45,3 @@ if (!process.env.VERCEL) {
     console.log(`Server is running on http://localhost:${PORT}`);
   });
 }
-module.exports = app;
