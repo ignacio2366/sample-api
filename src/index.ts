@@ -27,7 +27,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //DB Mongo
-connectDB();
+// connectDB();
+
 // API
 app.use("/api-docs", swaggerui.serve, swaggerui.setup(swaggerDocumentation));
 
